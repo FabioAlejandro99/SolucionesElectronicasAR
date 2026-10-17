@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ing. Fabio Rodríguez | Servicios Profesionales de Electrónica y Reparación</title>
-    <!-- Estilos CSS integrados -->
+    <title>Servicios Profesionales en Ingeniería Electrónica | Diagnóstico y Reparación</title>
     <style>
         :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --light-bg: #f8fafc;
-            --text-color: #334155;
+            --primary-color: #0b192c;
+            --secondary-color: #1e3e62;
+            --accent-color: #008dda;
+            --light-bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
             --white: #ffffff;
         }
 
@@ -18,189 +20,336 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
             background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        /* Encabezado / Banner */
+        /* Encabezado Principal */
         header {
-            background: linear-gradient(135deg, var(--primary-color), #1e293b);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .header-badge {
+            display: inline-block;
+            background-color: rgba(0, 141, 218, 0.2);
+            border: 1px solid var(--accent-color);
+            color: #e0f2fe;
+            padding: 0.4rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            letter-spacing: -0.5px;
         }
 
         header p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 1.5rem auto;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Contenedor principal */
-        .container {
-            max-width: 1100px;
+            font-size: 1.15rem;
+            color: #d1d5db;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 3rem 2rem;
         }
 
-        section-title {
+        /* Secciones de Contenido */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
         }
 
-        section-title h2 {
-            font-size: 2rem;
+        .section-header h2 {
+            font-size: 2.2rem;
             color: var(--primary-color);
+            margin-bottom: 0.75rem;
         }
 
-        /* Cuadrícula de Servicios */
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Rejilla de Servicios */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-color);
         }
 
         .service-card h3 {
-            color: var(--accent-color);
+            color: var(--secondary-color);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
 
         .service-card p {
-            font-size: 0.95rem;
-            color: #64748b;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            text-align: justify;
         }
 
-        /* Sección de Contacto */
+        .service-card ul {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        .service-card ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Sección de Metodología de Trabajo */
+        .capabilities-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 3rem;
+            margin: 4rem 0;
+            border: 1px solid #e5e7eb;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .capability-box {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .capability-box h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .capability-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Sección de Contacto Institucional */
         .contact-section {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
             text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
-            border-radius: 10px;
+            padding: 4rem 2rem;
+            border-radius: 8px;
         }
 
         .contact-section h2 {
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .btn-whatsapp {
+        .contact-section p {
+            color: #d1d5db;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn-contact {
             display: inline-block;
-            background-color: #25d366;
+            background-color: var(--accent-color);
             color: var(--white);
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 1.5rem;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
+        .btn-contact:hover {
+            background-color: #0077b6;
         }
 
-        /* Pie de página */
+        /* Pie de Página */
         footer {
             text-align: center;
-            padding: 1.5rem;
-            font-size: 0.85rem;
-            color: #64748b;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #e5e7eb;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado -->
+    <!-- Encabezado Principal -->
     <header>
-        <span class="badge">Ingeniería Electrónica Profesional</span>
-        <h1>Soluciones Electrónicas Avanzadas</h1>
-        <p>Diagnóstico, mantenimiento y reparación experta con respaldo profesional para el hogar, la movilidad eléctrica y el entretenimiento.</p>
+        <span class="header-badge">Ingeniería Electrónica Especializada</span>
+        <h1>Servicios Profesionales de Diagnóstico, Diseño y Reparación Electrónica</h1>
+        <p>Soluciones técnicas avanzadas respaldadas por conocimientos especializados en ingeniería. Intervención precisa a nivel de componentes para equipos domésticos, comerciales, movilidad eléctrica y tecnología.</p>
     </header>
 
     <!-- Contenido Principal -->
     <div class="container">
         
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <h2 style="color: var(--primary-color); font-size: 2rem;">Nuestros Servicios Especializados</h2>
-            <p style="color: #64748b;">Trabajamos con tecnología de punta y componentes de alta calidad.</p>
+        <div class="section-header">
+            <h2>Áreas de Especialización Técnica</h2>
+            <p>Servicios fundamentados en el análisis riguroso, instrumentación especializada y estándares de ingeniería.</p>
         </div>
 
         <div class="services-grid">
-            <!-- Servicio 1 -->
+            
+            <!-- Servicio 1: Tarjetas Electrónicas -->
             <div class="service-card">
                 <h3>Tarjetas Electrónicas</h3>
-                <p>Reparación a nivel de componentes de tarjetas electrónicas industriales y comerciales. Diagnóstico preciso con equipos especializados.</p>
+                <p>Diagnóstico avanzado, análisis de circuitos, reparación a nivel de componentes SMD y reconstrucción de trazas en placas de circuito impreso (PCB).</p>
+                <ul>
+                    <li>Sistemas de control doméstico</li>
+                    <li>Tarjetas para equipamiento comercial</li>
+                    <li>Evaluación y corrección de fallas de potencia y control</li>
+                </ul>
             </div>
 
-            <!-- Servicio 2 -->
+            <!-- Servicio 2: Electrónica del Hogar y Climatización -->
             <div class="service-card">
-                <h3>Línea Blanca y Hogar</h3>
-                <p>Mantenimiento y reparación experta de electrodomésticos: lavadoras, neveras, televisores y sistemas electrónicos del hogar.</p>
+                <h3>Electrónica Doméstica y Climatización</h3>
+                <p>Soporte técnico integral y reparación del módulo electrónico de control en equipos electrodomésticos y de acondicionamiento de aire.</p>
+                <ul>
+                    <li>Aires acondicionados (Sistemas Inverter y convencionales)</li>
+                    <li>Neveras y sistemas de refrigeración</li>
+                    <li>Lavadoras y centros de lavado</li>
+                    <li>Televisores y sistemas de despliegue visual</li>
+                </ul>
             </div>
 
-            <!-- Servicio 3 -->
+            <!-- Servicio 3: Equipos de Cómputo y Sistemas -->
+            <div class="service-card">
+                <h3>Equipos de Cómputo y Sistemas</h3>
+                <p>Diagnóstico de hardware, reparación de tarjetas madre (motherboards), fuentes de alimentación y optimización de arquitectura electrónica.</p>
+                <ul>
+                    <li>Computadoras de escritorio y portátiles</li>
+                    <li>Reparación de etapas de alimentación y carga</li>
+                    <li>Reemplazo y soldadura de componentes de precisión</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 4: Movilidad Eléctrica -->
             <div class="service-card">
                 <h3>Movilidad Eléctrica</h3>
-                <p>Especialistas en scooters eléctricas, motos eléctricas y patinetas. Reparación de sistemas de control, baterías y motores.</p>
+                <p>Servicio técnico especializado en la arquitectura electrónica de vehículos de movilidad personal y urbana.</p>
+                <ul>
+                    <li>Scooters y patinetas eléctricas</li>
+                    <li>Motos eléctricas</li>
+                    <li>Diagnóstico de controladores, baterías y módulos de gestión (BMS)</li>
+                </ul>
             </div>
 
-            <!-- Servicio 4 -->
+            <!-- Servicio 5: Entretenimiento y Consolas -->
             <div class="service-card">
                 <h3>Videojuegos y Consolas</h3>
-                <p>Servicio técnico especializado para consolas de videojuegos, incluyendo optimización y reparación de sistemas Xbox y hardware asociado.</p>
+                <p>Mantenimiento correctivo y preventivo del hardware de consolas de entretenimiento, abordando fallas complejas a nivel electrónico.</p>
+                <ul>
+                    <li>Sistemas Xbox y consolas de última generación</li>
+                    <li>Reparación de circuitos de video, energía y almacenamiento</li>
+                    <li>Sustitución de componentes defectuosos</li>
+                </ul>
+            </div>
+
+            <!-- Servicio 6: Ingeniería Electrónica Aplicada -->
+            <div class="service-card">
+                <h3>Ingeniería Electrónica Aplicada</h3>
+                <p>Desarrollo y adaptación de soluciones a la medida cuando las alternativas comerciales no se encuentran disponibles en el mercado.</p>
+                <ul>
+                    <li>Diseño y adaptación de circuitos electrónicos</li>
+                    <li>Prototipado e ingeniería inversa de módulos</li>
+                    <li>Consultoría técnica y solución integral de fallas complejas</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Metodología de Ingeniería -->
+        <div class="capabilities-section">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--primary-color); font-size: 1.6rem;">Metodología de Trabajo</h3>
+                <p style="color: var(--text-muted);">Proceso metodológico orientado a garantizar la máxima confiabilidad técnica.</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability-box">
+                    <h4>1. Diagnóstico</h4>
+                    <p>Análisis con instrumental especializado para determinar la causa raíz de la falla.</p>
+                </div>
+                <div class="capability-box">
+                    <h4>2. Solución</h4>
+                    <p>Determinación del procedimiento técnico correctivo óptimo e informe técnico.</p>
+                </div>
+                <div class="capability-box">
+                    <h4>3. Reparación / Diseño</h4>
+                    <p>Intervención precisa con componentes de especificación técnica requerida.</p>
+                </div>
+                <div class="capability-box">
+                    <h4>4. Pruebas y Validación</h4>
+                    <p>Verificación funcional exigente antes de la entrega formal del equipo.</p>
+                </div>
             </div>
         </div>
 
         <!-- Sección de Contacto -->
         <div class="contact-section">
-            <h2>¿Necesitas asesoría o soporte técnico?</h2>
-            <p>Contáctanos hoy mismo para un diagnóstico profesional de tu equipo.</p>
-            <!-- Reemplaza el número de teléfono con el tuyo en formato internacional -->
-            <a href="https://wa.me/573000000000?text=Hola%20Ingeniero,%20necesito%20información%20sobre%20un%20servicio%20de%20reparación" class="btn-whatsapp" target="_blank">Escríbenos por WhatsApp</a>
+            <h2>¿Requiere un diagnóstico o asesoría profesional?</h2>
+            <p>Póngase en contacto para evaluar su requerimiento técnico de manera personalizada.</p>
+            <!-- Inserte su número telefónico en el enlace respetando el código de país -->
+            <a href="https://wa.me/573000000000?text=Estimado%20Ingeniero,%20requiero%20una%20consulta%20técnica%20especializada." class="btn-contact" target="_blank">Iniciar Consulta Técnica</a>
         </div>
 
     </div>
 
-    <!-- Pie de página -->
+    <!-- Pie de Página -->
     <footer>
-        <p>&copy; 2026 - Ingeniería Electrónica y Reparaciones. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Servicios Profesionales de Ingeniería Electrónica. Todos los derechos reservados.</p>
     </footer>
 
 </body>
