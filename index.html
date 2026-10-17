@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ing. Fabio Rodríguez | Servicios Profesionales de Electrónica y Reparación</title>
+    <!-- Estilos CSS integrados -->
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563eb;
+            --light-bg: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Encabezado / Banner */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #1e293b);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Cuadrícula de Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* Sección de Contacto */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-radius: 10px;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <span class="badge">Ingeniería Electrónica Profesional</span>
+        <h1>Soluciones Electrónicas Avanzadas</h1>
+        <p>Diagnóstico, mantenimiento y reparación experta con respaldo profesional para el hogar, la movilidad eléctrica y el entretenimiento.</p>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: var(--primary-color); font-size: 2rem;">Nuestros Servicios Especializados</h2>
+            <p style="color: #64748b;">Trabajamos con tecnología de punta y componentes de alta calidad.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Servicio 1 -->
+            <div class="service-card">
+                <h3>Tarjetas Electrónicas</h3>
+                <p>Reparación a nivel de componentes de tarjetas electrónicas industriales y comerciales. Diagnóstico preciso con equipos especializados.</p>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="service-card">
+                <h3>Línea Blanca y Hogar</h3>
+                <p>Mantenimiento y reparación experta de electrodomésticos: lavadoras, neveras, televisores y sistemas electrónicos del hogar.</p>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="service-card">
+                <h3>Movilidad Eléctrica</h3>
+                <p>Especialistas en scooters eléctricas, motos eléctricas y patinetas. Reparación de sistemas de control, baterías y motores.</p>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="service-card">
+                <h3>Videojuegos y Consolas</h3>
+                <p>Servicio técnico especializado para consolas de videojuegos, incluyendo optimización y reparación de sistemas Xbox y hardware asociado.</p>
+            </div>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <div class="contact-section">
+            <h2>¿Necesitas asesoría o soporte técnico?</h2>
+            <p>Contáctanos hoy mismo para un diagnóstico profesional de tu equipo.</p>
+            <!-- Reemplaza el número de teléfono con el tuyo en formato internacional -->
+            <a href="https://wa.me/573000000000?text=Hola%20Ingeniero,%20necesito%20información%20sobre%20un%20servicio%20de%20reparación" class="btn-whatsapp" target="_blank">Escríbenos por WhatsApp</a>
+        </div>
+
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 - Ingeniería Electrónica y Reparaciones. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
