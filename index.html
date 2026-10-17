@@ -9,11 +9,16 @@
             --primary-color: #0b192c;
             --secondary-color: #1e3e62;
             --accent-color: #008dda;
-            --light-bg: #f4f6f9;
+            --light-bg: #f8fafc;
             --card-bg: #ffffff;
             --text-main: #1f2937;
             --text-muted: #4b5563;
             --white: #ffffff;
+            
+            /* Colores de las tarjetas de Misión, Visión y Valores */
+            --color-mision: #2563eb;
+            --color-vision: #16a34a;
+            --color-valores: #f97316;
         }
 
         * {
@@ -23,10 +28,113 @@
             font-family: 'Segoe UI', Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--light-bg);
             color: var(--text-main);
             line-height: 1.7;
+            padding-top: 60px;
+        }
+
+        /* Menú de Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-logo {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Desplegable Misión, Visión y Valores */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            color: #d1d5db;
+            background: none;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--secondary-color);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .dropdown-content a {
+            color: var(--white);
+            padding: 0.7rem 1rem;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Encabezado Principal */
@@ -176,6 +284,92 @@
             margin-bottom: 0.4rem;
         }
 
+        /* Estilos de la Sección Misión, Visión y Valores (Inspirado en la Infografía) */
+        .mvv-section {
+            margin: 5rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mvv-card {
+            background-color: var(--white);
+            border-radius: 28px;
+            padding: 3rem 2rem 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            scroll-margin-top: 100px;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Bordes de color según cada tarjeta */
+        .card-mision {
+            border: 3px solid var(--color-mision);
+        }
+
+        .card-vision {
+            border: 3px solid var(--color-vision);
+        }
+
+        .card-valores {
+            border: 3px solid var(--color-valores);
+        }
+
+        /* Círculos con íconos vectoriales SVG */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -5.5rem auto 1.5rem auto;
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-mision {
+            background-color: var(--color-mision);
+        }
+
+        .icon-vision {
+            background-color: var(--color-vision);
+        }
+
+        .icon-valores {
+            background-color: var(--color-valores);
+        }
+
+        .icon-circle svg {
+            width: 36px;
+            height: 36px;
+            fill: currentColor;
+        }
+
+        .mvv-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+        }
+
+        .mvv-card p {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
         /* Sección de Metodología y Confianza */
         .capabilities-section {
             background-color: var(--white);
@@ -236,6 +430,12 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: #e0f2fe;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-email {
+            font-size: 1rem;
+            color: #93c5fd;
             margin-bottom: 1.5rem;
         }
 
@@ -268,6 +468,25 @@
 </head>
 <body>
 
+    <!-- Menú de Navegación Superior -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Soluciones Electrónicas AR</a>
+            <ul class="nav-menu">
+                <li><a href="#servicios">Servicios</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-btn">Nosotros &#9662;</button>
+                    <div class="dropdown-content">
+                        <a href="#mision">Misión</a>
+                        <a href="#vision">Visión</a>
+                        <a href="#valores">Valores</a>
+                    </div>
+                </li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Encabezado Principal -->
     <header>
         <img src="Logo.jfif" alt="Logo Soluciones Electrónicas AR" style="max-width: 120px; height: auto; display: block; margin: 0 auto 1rem auto;">
@@ -286,11 +505,12 @@
         <!-- Mensaje de Bienvenida -->
         <div class="welcome-card">
             <h2>Ingeniería Electrónica al Servicio de la Comunidad</h2>
-            <p>Soy <strong>ingeniero electrónico</strong> y estoy a disposición de la comunidad y de nuestros clientes para resolver cualquier requerimientuciono en reparación electrónica. En <strong>Soluciones Electrónicas AR</strong> brindamos una atención amena, sincera y cercana, respaldada por la mejor calidad técnica y profesional orientada por ingenieros.</p>
+            <p>Soy <strong>ingeniero electrónico</strong> y estoy a disposición de la comunidad y de nuestros clientes para resolver cualquier requerimiento en reparación electrónica. En <strong>Soluciones Electrónicas AR</strong> brindamos una atención amena, sincera y cercana, respaldada por la mejor calidad técnica y profesional orientada por ingenieros.</p>
             <p style="margin-bottom: 0;">Ofrecemos revisión de tarjetas electrónicas (domésticas y comerciales), reparación de electrodomésticos, ajuste de sistemas y cambio de repuestos a precios muy accesibles y económicos. Escriban y pregunten con total tranquilidad.</p>
         </div>
         
-        <div class="section-header">
+        <!-- Sección de Servicios -->
+        <div class="section-header" id="servicios" style="scroll-margin-top: 80px;">
             <h2>Nuestros Servicios</h2>
             <p>Atención directa, diagnóstico preciso y repuestos de alta calidad con garantía técnica.</p>
         </div>
@@ -366,6 +586,48 @@
 
         </div>
 
+        <!-- Sección Misión, Visión y Valores (Diseño Profesional según la Infografía) -->
+        <div class="mvv-section">
+            <div class="section-header">
+                <h2>Nuestra Filosofía Institucional</h2>
+                <p>Fundamentos que guían nuestro compromiso con la comunidad y el progreso tecnológico regional.</p>
+            </div>
+
+            <div class="mvv-grid">
+                
+                <!-- Tarjeta Misión -->
+                <div class="mvv-card card-mision" id="mision">
+                    <div class="icon-circle icon-mision">
+                        <!-- Ícono Cohete -->
+                        <svg viewBox="0 0 24 24"><path d="M13.13 22.19L11.5 18.36L8.84 21.02L8.13 18.19L5.3 17.48L7.96 14.82L4.13 13.19L5.41 11.91L9.12 12.87L12.87 9.12L11.91 5.41L13.19 4.13L14.82 7.96L17.48 5.3L18.19 8.13L21.02 8.84L18.36 11.5L22.19 13.13L13.13 22.19Z"/></svg>
+                    </div>
+                    <h3>Misión</h3>
+                    <p>En Soluciones Electrónicas AR, nuestra misión es ir en busca de los problemas y las necesidades de nuestros clientes para brindarles soluciones efectivas mediante la electrónica y la tecnología. Nos comprometemos a ofrecer servicios confiables, innovadores y de calidad, generando tranquilidad, confianza y bienestar.</p>
+                </div>
+
+                <!-- Tarjeta Visión -->
+                <div class="mvv-card card-vision" id="vision">
+                    <div class="icon-circle icon-vision">
+                        <!-- Ícono Bombillo / Innovación -->
+                        <svg viewBox="0 0 24 24"><path d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z"/></svg>
+                    </div>
+                    <h3>Visión</h3>
+                    <p>Para el año 2038, Soluciones Electrónicas AR aspira a ser una empresa reconocida por su innovación y excelencia en electrónica, llevando soluciones tecnológicas a municipios y veredas de Casanare, Boyacá y Cundinamarca. Buscamos impulsar el desarrollo regional, acercar la tecnología a las comunidades y demostrar que el progreso tecnológico también es posible en nuestros territorios rurales.</p>
+                </div>
+
+                <!-- Tarjeta Valores -->
+                <div class="mvv-card card-valores" id="valores">
+                    <div class="icon-circle icon-valores">
+                        <!-- Ícono Átomo / Ciencia / Tecnología -->
+                        <svg viewBox="0 0 24 24"><path d="M12,11A1,1 0 0,1 13,12A1,1 0 0,1 12,13A1,1 0 0,1 11,12A1,1 0 0,1 12,11M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20Z"/></svg>
+                    </div>
+                    <h3>Valores</h3>
+                    <p>En Soluciones Electrónicas AR nos guiamos por la ética profesional, la transparencia, la honestidad y la responsabilidad. Trabajamos con calidad e innovación, construyendo relaciones de confianza con nuestros clientes y manteniendo un compromiso con la solución de sus problemas, el bienestar de las comunidades y el desarrollo tecnológico de nuestros territorios.</p>
+                </div>
+
+            </div>
+        </div>
+
         <!-- Garantía y Calidad Profesional -->
         <div class="capabilities-section">
             <div style="text-align: center; margin-bottom: 1.5rem;">
@@ -375,38 +637,4 @@
             
             <div class="capabilities-grid">
                 <div class="capability-box">
-                    <h4>1. Diagnóstico Honesto</h4>
-                    <p>Revisión técnica profesional explicando claramente la solución antes de proceder.</p>
-                </div>
-                <div class="capability-box">
-                    <h4>2. Precios Accesibles</h4>
-                    <p>Tarifas económicas y de repuestos muy competitivos para cuidar tu presupuesto.</p>
-                </div>
-                <div class="capability-box">
-                    <h4>3. Cambio de Repuestos</h4>
-                    <p>Sustitución de baterías, módulos y periféricos para dejar cada equipo completamente apto.</p>
-                </div>
-                <div class="capability-box">
-                    <h4>4. Respaldo de Ingeniería</h4>
-                    <p>Trato humano, profesional y enfocado en la satisfacción del cliente.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección de Contacto -->
-        <div class="contact-section">
-            <h2>¿Tienes algún equipo para revisar o una consulta?</h2>
-            <p>Comunícate con confianza. Estamos para atenderte de la mejor manera y solucionar lo que requieras.</p>
-            <div class="contact-phone">Teléfono / WhatsApp: +57 311 534 9728</div>
-            <a href="https://wa.me/573115349728?text=Hola%20Ingeniero%20Fabio,%20quisiera%20consultar%20sobre%20un%20servicio%20de%20Soluciones%20Electr%C3%B3nicas%20AR" class="btn-contact" target="_blank">Escribir por WhatsApp</a>
-        </div>
-
-    </div>
-
-    <!-- Pie de Página -->
-    <footer>
-        <p>&copy; 2026 Ing. Fabio Rodríguez - Servicios Electrónicos. Todos los derechos reservados.</p>
-    </footer>
-
-</body>
-</html>
+                    <h4>
